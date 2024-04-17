@@ -1,0 +1,55 @@
+:root{
+  
+}
+
+*{
+  padding:0;margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat';
+  background-color: #272727;
+}
+
+.main_wrapper{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  border:2px solid #cacaca;
+  border-radius: 1rem;
+  width: 50%;
+  padding:2rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+
+  .score{
+    text-align: center;
+
+  }
+}
+
+
+.game{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:2rem;
+
+  .icon_card{
+    background-color: white;
+    border-radius: 10rem;
+    img{
+      padding:4rem;
+    }
+  }
+}
