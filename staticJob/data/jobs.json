@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Photosnap",
+        "new": true,
+        "featured": true,
+        "status": "Senior Frontend Developer",
+        "when": "1d ago",
+        "howto": "Full Time",
+        "region": "USA Only",
+
+        "tags": ["Frontend", "Senior", "JavaScript", "TypeScript", "React"]
+    },
+    {
+        "name": "Manage",
+        "new": true,
+        "featured": true,
+        "status": "FullStack Developer",
+        "when": "1d ago",
+        "howto": "Part Time",
+        "region": "Remote",
+
+        "tags": ["Fullstack", "Midweight", "Python", "React"]
+    },
+    {
+        "name": "Account",
+        "new": true,
+        "featured": true,
+        "status": "FullStack Developer",
+        "when": "2d ago",
+        "howto": "Part Time",
+        "region": "USA Only",
+
+        "tags": ["Frontend", "Junior", "React", "Sass", "JavaScript"]
+    }
+]

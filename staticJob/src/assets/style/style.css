@@ -1,0 +1,122 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --DesaturatedDarkCyan: hsl(180, 29%, 50%);
+
+    --LightGrayishCyan: hsl(180, 52%, 96%);
+    --LightGrayishCyan: hsl(180, 31%, 95%);
+    --DarkGrayishCyan: hsl(180, 8%, 52%);
+    --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+
+    --fsize: calc(1vw + 1vh)
+}
+
+body{
+    height: 100vh;
+    background-color: var(--DarkGrayishCyan);
+    font-family:'Spartan'
+}
+
+@font-face {
+    font-family: 'Spartan';
+    src: url(../font/LeagueSpartan-Regular.ttf);
+}
+
+.main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card{
+    display:flex;
+    justify-content: space-between;
+
+    gap:10px;
+    border-radius: 10px;
+    padding:2rem;
+    box-shadow: 0 .5rem 1rem 0.1rem #0003;
+
+    width: 1200px;
+    background-color: white;
+
+    margin-bottom: 2rem;
+}
+
+.profile{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:10px;
+}
+
+.profile_inner > *{
+    padding:5px;
+}
+
+.profile_inner :nth-child(1){
+    color: var(--DesaturatedDarkCyan);
+    font-weight: 600;
+    font-size:1.1rem;
+}
+
+.profile_inner span:nth-child(5){
+    color:#acacac;
+    margin-right:2rem;
+}
+.profile_inner span:nth-child(6){
+    color:#acacac;
+    margin-right:2rem;
+}
+.profile_inner span:nth-child(7){
+    color:#acacac
+}
+
+.card .tags{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    gap:1rem;
+}
+
+.card .tags p{
+    border-radius:5px;
+    padding:.5rem;
+    background-color: var(--LightGrayishCyan);
+    color:var(--DesaturatedDarkCyan);
+    /* font-weight: bold; */
+    cursor: pointer;
+    transition: .25s ease all;
+}
+
+.card .tags p:hover{
+    background-color: var(--DesaturatedDarkCyan);
+    color:var(--LightGrayishCyan);
+}
+
+.current_tags{
+    border-radius:5px;
+    padding:.5rem;
+    background-color: var(--LightGrayishCyan);
+    color:var(--DesaturatedDarkCyan);
+
+    display:flex;
+    gap:10px;
+
+    margin-bottom:2rem;
+}
+
+.hidden{
+    display:none;
+    visibility: hidden;
+}
+
+.is_active{
+    display:flex;
+    visibility:visible
+}
