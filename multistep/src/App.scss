@@ -1,0 +1,280 @@
+:root{
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplishblue: hsl(243, 100%, 62%);
+    --Pastelblue: hsl(228, 100%, 84%);
+    --Lightblue: hsl(206, 94%, 87%);
+    --Strawberryred: hsl(354, 84%, 57%);
+}
+
+*{
+    margin:0;padding:0;
+    box-sizing: border-box;
+    font-family: 'ubuntu';
+}
+
+@font-face {
+    font-family: 'ubuntu';
+    src: url('./assets/fonts/Ubuntu-Medium.ttf');
+}
+body{
+    font-family: 'ubuntu';
+}
+
+.notActive{
+    display:none;
+}
+
+.main_wrapper{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    background-color: var(--Pastelblue);
+}
+
+.main__inner{
+    display:flex;
+    justify-content: start;
+    align-items: start;
+    border-radius: .5rem;
+    padding:1rem;
+    width: 1000px;
+    position: relative;
+    background-color: white;
+}
+
+.steps{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
+    
+    background: url('../public/images/bg-sidebar-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    height: 500px;
+    padding: 2rem;
+
+    .steps_card{
+        display:flex;
+        justify-content: start;
+        align-items: center;
+        gap:1rem;
+        padding:1rem;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        .steps_id{
+            border:1px solid white;
+            padding:.4rem .7rem;
+            border-radius: 100%;
+            color:white;
+        }
+        
+        .steps_id_active{
+            background-color: white;
+            border:1px solid white;
+            color:black;
+            padding:.4rem .7rem;
+            border-radius: 100%;
+        }
+    }
+    
+}
+
+.content{
+    height: 100%;
+    flex: 1;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem 5rem;
+
+    .content_card{
+        height: 100%; 
+        
+        p{
+            color:#cacaca
+        }
+    }
+}
+
+.content > *{
+    flex:1;
+}
+
+
+.personal_info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    
+    form{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap:2rem;
+        padding-top: 2rem;
+
+        input{
+            width: 100%;
+            padding:1rem;
+            border-radius: .5rem;
+            border:1px solid #cacaca;
+            outline: none;
+            font-weight: bold;
+
+            &:focus{
+                border: 1px solid var(--Purplishblue);
+            }
+        }
+    }
+}
+
+.next{
+    position: absolute;
+    top:100%;
+    left:74%;
+    padding:1rem 1.5rem;
+    border-radius: .5rem;
+    border:none;
+    background-color: var(--Purplishblue);
+    color:whitesmoke;
+    cursor: pointer;
+}
+
+.goback{
+    position: absolute;
+    top:100%;
+    left:11%;
+    padding:1rem 1.5rem;
+    border-radius: .5rem;
+    border:none;
+    background:none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.plan_list{
+    display:flex;
+    gap:1rem;
+    margin-block:2rem;
+
+    .plan_card{
+        
+        padding:1rem;
+        border:1px solid #cacaca;
+        border-radius: .5rem;
+        width: 100%;
+
+        &:hover{
+            border:1px solid var(--Purplishblue);
+            cursor: pointer;
+        }
+
+        img{
+            margin-bottom: 4rem;
+        }
+
+        p{
+            padding-block: .5rem;
+        }
+
+    }
+
+    .plan_card_active{
+        padding:1rem;
+        border:1px solid var(--Purplishblue);
+        background-color: #add8e630;
+        border-radius: .5rem;
+        width: 100%;
+
+        &:hover{
+            border:1px solid var(--Purplishblue);
+            cursor: pointer;
+        }
+
+        img{
+            margin-bottom: 4rem;
+        }
+        
+        p{
+            padding-block: .5rem;
+        }
+    }
+}
+
+.billing{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    width: 100%;
+    padding:1rem;
+    border-radius: .4rem;
+    background-color: #cacaca50;
+}
+
+.range{
+    width: 40px;
+    border-radius: 1rem;
+    background-color: var(--Marine-blue);
+    position: relative;
+    padding:.3rem;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+
+    
+    .circle{
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border-radius: 50%;
+    }
+}
+
+.range[data-ison="true"]{
+    justify-content: flex-end;
+}
+
+
+.addons{
+    display:flex;
+    flex-direction: column;
+
+    .addons_list{
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+        gap:1rem;
+        margin-top:2rem;
+
+        .addons_card{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:1.5rem;
+            
+            border:1px solid #cacaca;
+            border-radius: .6rem;
+            cursor: pointer;
+
+            &:hover{
+                border:1px solid var(--Purplishblue)
+            }
+            
+            .addons_info{
+                display:flex;
+                gap:1rem;
+            }
+        }
+    }
+}
