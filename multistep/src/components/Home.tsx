@@ -1,18 +1,21 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import steps from '../../data/steps.json'
-import content from '../../data/content.json'
 import PersonalInfo from './content/PersonalInfo'
 import Plan from './content/Plan'
-
+import Addons from './content/Addons'
+import Summary from './content/Summary'
 const Home = () => {
 
-    const [isActive, setIsActive] = useState(0)
+    const { isActive, setIsActive, handleClick } = UseMainContext
 
-    const handleClick = (id: number) => {
-        setIsActive(id)
-    }
 
-    const content = [ <PersonalInfo />, <Plan />]
+    const content = [ 
+        <PersonalInfo />, 
+        <Plan />, 
+        <Addons />,
+        <Summary />
+      ]
+
 
   return (
     <div className='main_wrapper'>
@@ -38,11 +41,19 @@ const Home = () => {
             <div className="content">
                 {content.map((item, index) => {
                     return (
-                        <div key={index} className={isActive === index ? 'conetent_cart' : 'notActive'}>
+                        <div key={index} className={isActive === index ? 'content_card' : 'notActive'}>
                             {item}
+
+                            <button className={isActive === 0 ? 'notActive' : 'goback'}
+                            onClick={() => setIsActive(cur => cur - 1)}
+                            >Go Back</button>
+                            <button className={isActive === 3 ? 'notActive' : 'next'}
+                            onClick={() => setIsActive(cur => cur + 1)}
+                            >Next Step</button>
                         </div>
                     )
                 })}
+
             </div>
         </div>
     </div>
