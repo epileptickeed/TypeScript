@@ -3,8 +3,9 @@ import { UseMainContext } from '../../../context/MainContext'
 
 const Plan = () => {
 
-  const { planActive, setPlanActive, monthly, setMonthly } = UseMainContext()
+  const { planActive, yearly, setYearly, setPlan } = UseMainContext()
   
+
 
   return (
     <div className='plan'>
@@ -14,13 +15,13 @@ const Plan = () => {
         {plans.map((item,index) => {
           return (
             <div key={index} className={planActive === index ? 'plan_card_active' : 'plan_card'}
-              onClick={() => setPlanActive(index)}
+              onClick={() => setPlan(index, item.title, item.priceMonthly, item.priceYearly)}
             >
               <img src={item.img} alt={item.title} />
               <div className="plan_card__info">
                 <span>{item.title}</span>
-                <p>${monthly ? `${item.priceYearly}/yr` : `${item.priceMonthly}/mo`} </p>
-                {monthly ? 
+                <p>${yearly ? `${item.priceYearly}/yr` : `${item.priceMonthly}/mo`} </p>
+                {yearly ? 
                   (<div>2 months free</div>)
                 : 
                 ('')}
@@ -31,7 +32,7 @@ const Plan = () => {
       </div>
       <div className="billing">
         <span>Monthly</span>
-        <div className="range" data-ison={monthly} onClick={() => setMonthly(!monthly)}>
+        <div className="range" data-ison={yearly} onClick={() => setYearly(!yearly)}>
           <div className="circle"></div>
         </div>
         <span>Yearly</span>
