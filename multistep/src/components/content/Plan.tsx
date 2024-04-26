@@ -22,7 +22,7 @@ const Plan = () => {
                 <span>{item.title}</span>
                 <p>${yearly ? `${item.priceYearly}/yr` : `${item.priceMonthly}/mo`} </p>
                 {yearly ? 
-                  (<div>2 months free</div>)
+                  (<b>2 months free</b>)
                 : 
                 ('')}
               </div>

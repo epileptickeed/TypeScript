@@ -1,35 +1,13 @@
-import { useState } from 'react'
 import addons from '../../../data/addons.json'
 import { UseMainContext } from '../../../context/MainContext'
 
-type TitlesTypes = {
-  title: string,
-  priceMonthly: number,
-  priceYearly: number,
-}
+
 
 const Addons = () => {
 
-  const { yearly } = UseMainContext()
+  const { yearly, handleAddons, isChecked } = UseMainContext()
 
-  const [isChecked, setIsChecked] = useState(Array(addons.length).fill(false))
-  const [allTitles, setAllTitles] = useState<TitlesTypes[]>([])
-
-  const handleAddons = (index: number, title: string, priceMonthly: number, priceYearly: number) => {
-    const newCheckedItems = [...isChecked];
-    newCheckedItems[index] = !newCheckedItems[index]
-    setIsChecked(newCheckedItems)
-    
-    const existingTitle = title
-    if(!allTitles.some(item => item.title === existingTitle)){
-      setAllTitles(current => {
-        return [
-          ...current,
-          {title: title, priceMonthly: priceMonthly, priceYearly: priceYearly}
-        ]
-      })
-    }
-  }
+  
   
 
   return (
@@ -41,7 +19,7 @@ const Addons = () => {
         {addons.map((item, index) => {
           return (
             <div key={index} className='addons_card'
-              onClick={() => handleAddons(index, item.title, item.priceMonthly, item.priceYearly)}
+              onClick={() => handleAddons(index, item.title, item.priceMonthly, item.priceYearly, isChecked[index])}
             >
               <div className='addons_info'>
                 <input type="checkbox" checked={isChecked[index]} readOnly/>

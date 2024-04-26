@@ -4,6 +4,7 @@ import Plan from './content/Plan'
 import Addons from './content/Addons'
 import Summary from './content/Summary'
 import { UseMainContext } from '../../context/MainContext'
+import Confirm from './content/Confirm'
 const Home = () => {
 
     const { isActive, setIsActive, handleClick } = UseMainContext()
@@ -13,7 +14,8 @@ const Home = () => {
         <PersonalInfo />, 
         <Plan />, 
         <Addons />,
-        <Summary />
+        <Summary />,
+        <Confirm />
       ]
 
 
@@ -44,10 +46,10 @@ const Home = () => {
                         <div key={index} className={isActive === index ? 'content_card' : 'notActive'}>
                             {item}
 
-                            <button className={isActive === 0 ? 'notActive' : 'goback'}
+                            <button className={isActive === 0 || isActive === 4 ? 'notActive' : 'goback'}
                             onClick={() => setIsActive(cur => cur - 1)}
                             >Go Back</button>
-                            <button className={isActive === 3 ? 'notActive' : 'next'}
+                            <button className={isActive === 3 || isActive === 4 ? 'notActive' : 'next'}
                             onClick={() => setIsActive(cur => cur + 1)}
                             >Next Step</button>
                         </div>
